@@ -1,0 +1,6 @@
+# On first terminal, start a listener
+`nc -nvlp 9999`
+# On second terminal, run
+`bash -c 'exec bash -i &>/dev/tcp/127.0.0.1/9999 <&1'`
+# Expected behaviour
+After profile is loaded, bash should show this error `bash: socket: Permission denied`
